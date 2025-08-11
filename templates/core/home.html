@@ -1,0 +1,535 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<style>
+.service-item {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+.service-item:hover {
+    transform: translateY(-5px);
+}
+.service-text {
+    background-color: #f0f0f0;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.service-text a {
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+}
+.service-arrow {
+    font-size: 1.25rem;
+    color: #000;
+}
+.service-icon img {
+    width: 40px;
+    height: 40px;
+}
+.service-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(57, 57, 57, 0.3);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+    z-index: 2;
+}
+.service-item:hover .service-hover-overlay {
+    opacity: 1;
+}
+</style>
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="position-relative">
+                    <img src="{% static 'img/KCC-C1.jpg' %}" alt="Slide 1" class="w-100 img-fluid" style="height: 500px; object-fit: cover;">
+                    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="text-center px-3">
+                            <h1 class="display-5 text-white fw-bold animated slideInDown">Manufactured With Advanced Technology</h1>
+                            <p class="fs-6 fs-md-5 text-white mb-4 animated slideInDown">Innovative, high-quality AAC, AAAC, and ACSR conductors produced with cutting-edge technology and expert craftsmanship for superior performance.</p>
+                            <a href="#" class="btn btn-primary py-3 px-5 animated slideInDown explore-btn">Explore More <i class="fas fa-arrow-down ms-2"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="position-relative">
+                    <img src="{% static 'img/KCC-C2.jpg' %}" alt="Slide 2" class="w-100 img-fluid" style="height: 500px; object-fit: cover;">
+                    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="text-center px-3">
+                            <h1 class="display-5 text-white fw-bold animated slideInDown">Powering Tomorrow with Precise Engineering</h1>
+                            <p class="fs-6 fs-md-5 text-white mb-4 animated slideInDown">Leading the way in high-quality AAC, AAAC, and ACSR conductors with cutting-edge technology and expert craftsmanship.</p>
+                            <a href="#" class="btn btn-primary py-3 px-5 animated slideInDown explore-btn">Explore More <i class="fas fa-arrow-down ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+ {% comment %} Carousel End --> {% endcomment %}
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <small class="text-primary text-uppercase">About KCC</small>
+                        <h1 class="display-6 mb-5">Welcome To Krishna Cables & Conductors</h1>
+                        <div class="row g-4 mb-4">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="check-icon me-3"><i class="fas fa-check"></i></div>
+                                    <h5 class="mb-0">Expert Technician</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="check-icon me-3"><i class="fas fa-check"></i></div>
+                                    <h5 class="mb-0">Best Quality Services</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 pt-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="check-icon me-3"><i class="fas fa-check"></i></div>
+                                    <h5 class="mb-0">Expert Team</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 pt-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="check-icon me-3"><i class="fas fa-check"></i></div>
+                                    <h5 class="mb-0">Commitment To Quality</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 pt-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="check-icon me-3"><i class="fas fa-check"></i></div>
+                                    <h5 class="mb-0">High Capacity</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 pt-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="check-icon me-3"><i class="fas fa-check"></i></div>
+                                    <h5 class="mb-0">Diverse Product Range</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mb-4">At Krishna Cables & Conductors, we leverage advanced technology and skilled expertise to manufacture high-quality AAC, AAAC, and ACSR conductors, ensuring reliability and efficiency at all times.</p>
+                        <div class="border-top mt-4 pt-4">
+                            <div class="row">
+                                <div class="col-sm-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-box me-3">
+                                            <i class="fa fa-phone-alt"></i>
+                                        </div>
+                                        <h5 class="mb-0">+012 345 6789</h5>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-box me-3">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <h5 class="mb-0">info@example.com</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6 text-end">
+                            <img class="img-fluid w-75 wow zoomIn" data-wow-delay="0.1s" src="{% static 'img/KCC-A1.jpg' %}" style="margin-top: 25%;">
+                        </div>
+                        <div class="col-6 text-start">
+                            <img class="img-fluid w-100 wow zoomIn" data-wow-delay="0.3s" src="{% static 'img/KCC-A2.jpg' %}">
+                        </div>
+                        <div class="col-6 text-end">
+                            <img class="img-fluid w-50 wow zoomIn" data-wow-delay="0.5s" src="{% static 'img/KCC-A3.jpg' %}">
+                        </div>
+                        <div class="col-6 text-start">
+                            <img class="img-fluid w-75 wow zoomIn" data-wow-delay="0.7s" src="{% static 'img/KCC-A4.jpg' %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="{% static 'img/KCC-B1.jpg' %}">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-sm-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <h1 class="display-4 text-white" data-toggle="counter-up">+11</h1>
+                    <span class="text-primary">Years of Experience</span>
+                </div>
+                <div class="col-sm-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h1 class="display-4 text-white" data-toggle="counter-up">+80</h1>
+                    <span class="text-primary">Projects Succeed</span>
+                </div>
+                <div class="col-sm-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-4 text-white" data-toggle="counter-up">+150</h1>
+                    <span class="text-primary">Experienced Workers</span>
+                </div>
+                <div class="col-sm-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h1 class="display-4 text-white" data-toggle="counter-up">+12</h1>
+                    <span class="text-primary">Awards For Quality</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+    <!-- Features Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-6 mb-5">Few Reasons Why People Choosing Us!</h1>
+                    <p class="mb-5"></p>
+                    <div class="d-flex mb-5">
+                        <div class="icon-circle me-4">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-3">Expert Team</h5>
+                            <span>Our workforce comprises highly trained professionals with extensive industry experience, driving innovation and excellence in every project.</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-5">
+                        <div class="icon-circle me-4">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-3">Continuous Improvement</h5>
+                            <span>We are committed to continuous improvement, regularly updating our skills and knowledge to stay ahead in the industry.</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-5">
+                        <div class="icon-circle me-4">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-3">Safety and Efficiency</h5>
+                            <span>We prioritize safety and efficiency in all our operations, ensuring the best outcomes for our clients.</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-5">
+                        <div class="icon-circle me-4">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-3">Robust Production</h5>
+                            <span>We utilize advanced technologies and methodologies to ensure robust and reliable production processes.</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="icon-circle me-4">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-3">24/7 Support</h5>
+                            <span>Our support team is available 24/7 to assist you with any inquiries or issues you may have.</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="position-relative rounded overflow-hidden h-100" style="min-height: 400px;">
+                        <img class="position-absolute w-100 h-100" src="{% static 'img/KCC-F1.jpg' %}" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <small class="text-primary text-uppercase">what we offer</small>
+                <h1 class="display-6 mb-5">Manufactured In India, Built For Long Lasting Durability.</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item">
+                        <div class="service-hover-overlay">
+                            Expertly designed for high-tensile applications, ACSR conductors feature a steel core for added strength and are suited for long-distance and high-load transmission.
+                        </div>
+                        <img class="img-fluid" src="{% static 'img/KCC-ACSR.jpg' %}" alt="">
+                        <div class="service-text">
+                            <div class="d-flex align-items-center">
+                                <a class="h5 mb-0" href="">ACSR- Aluminium Conductors Steel Reinforced</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item">
+                        <div class="service-hover-overlay">
+                            Combining lightweight and high strength, AAAC conductors are perfect for long spans and harsh environmental conditions, offering enhanced performance and durability.
+                        </div>
+                        <img class="img-fluid" src="{% static 'img/KCC-AAAC.jpg' %}" alt="">
+                        <div class="service-text">
+                            <div class="d-flex align-items-center">
+                                <a class="h5 mb-0" href="">AAAC - All Aluminium Alloy Conductors</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item">
+                        <div class="service-hover-overlay">
+                            Ideal for urban and rural distribution networks, our AAC conductors provide excellent conductivity and corrosion resistance for reliable electrical transmission.
+                        </div>
+                        <img class="img-fluid" src="{% static 'img/KCC-AAC.jpg' %}" alt="">
+                        <div class="service-text">
+                            <div class="d-flex align-items-center">
+                                <a class="h5 mb-0" href="">AAC (All Aluminium Conductors)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Quote Start -->
+    <div class="container-fluid my-5 px-0">
+    <div class="row g-0 shadow-lg rounded overflow-hidden">
+        <!-- Left Section: Background Image with Text -->
+        <div class="col-lg-6 d-flex flex-column justify-content-center text-white p-5" style="background: url('{% static 'img/carousel-1.jpg' %}') center/cover no-repeat;">
+            <div class="mb-4">
+                <small class="text-warning text-uppercase">About KCC</small>
+                <h1 class="display-6 fw-bold">For Individuals And Organisations</h1>
+                <p class="text-light">KCC empowers individuals and organizations with tailored climate control services. We ensure comfort, efficiency, and expert care in every solution we deliver.</p>
+                <a href="#" class="btn btn-warning px-4 py-2 fw-semibold">More Details</a>
+            </div>
+        </div>
+
+        <!-- Right Section: Quote Form -->
+        <div class="col-lg-6 bg-white p-5">
+            <h4 class="mb-4 text-center text-primary fw-bold">Get a Free Quote</h4>
+            <form>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                            <label for="name">Your Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                            <label for="email">Your Email</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
+                            <label for="mobile">Your Mobile</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="service" placeholder="Service Type">
+                            <label for="service">Service Type</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 80px"></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary px-5 py-3 fw-semibold">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <!-- Quote End -->
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6 mb-5">Meet Our Professional Team Members</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/team-1.jpg' %}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5>Full Name</h5>
+                            <span class="text-primary">Designation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/team-2.jpg' %}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5>Full Name</h5>
+                            <span class="text-primary">Designation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5>Full Name</h5>
+                            <span class="text-primary">Designation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/team-4.jpg' %}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5>Full Name</h5>
+                            <span class="text-primary">Designation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6 mb-5">What They Say About Our Services</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="testimonial-left h-100">
+                        <img class="img-fluid animated pulse infinite" src="{% static 'img/testimonial-1.jpg' %}" alt="">
+                        <img class="img-fluid animated pulse infinite" src="{% static 'img/testimonial-2.jpg' %}" alt="">
+                        <img class="img-fluid animated pulse infinite" src="{% static 'img/testimonial-3.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="testimonial-item text-center">
+                            <img class="img-fluid mx-auto mb-4" src="{% static 'img/testimonial-1.jpg' %}" alt="">
+                            <p class="fs-5">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                            <h5>Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <img class="img-fluid mx-auto mb-4" src="{% static 'img/testimonial-2.jpg' %}" alt="">
+                            <p class="fs-5">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                            <h5>Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <img class="img-fluid mx-auto mb-4" src="{% static 'img/testimonial-3.jpg' %}" alt="">
+                            <p class="fs-5">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                            <h5>Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="testimonial-right h-100">
+                        <img class="img-fluid animated pulse infinite" src="{% static 'img/testimonial-1.jpg' %}" alt="">
+                        <img class="img-fluid animated pulse infinite" src="{% static 'img/testimonial-2.jpg' %}" alt="">
+                        <img class="img-fluid animated pulse infinite" src="{% static 'img/testimonial-3.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
